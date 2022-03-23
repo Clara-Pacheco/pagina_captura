@@ -46,6 +46,8 @@ usado o display: flex + justify-content: flex-end;*/
     background-image: url('../images/people.jpg');
     background-size: cover;
     overflow: hidden;
+    position: relative;
+    
 }
 
 /*
@@ -95,3 +97,44 @@ NÃO FUNCIONA.*/
 /*As duas propriedades de background-position poderiam ser substituídas por uma só, dessa forma:
 background-position: calc(100% - 10px) center;
 sendo o primeiro valor do eixo x e o segundo do eixo y.*/
+
+.image {
+   width: 160px;
+
+}
+
+.about {
+    max-width: 1000px;
+    background-color: #202121;
+    height: auto;
+    position: absolute;
+    padding: 10px;
+    box-sizing: border-box;
+  
+   
+}
+
+.about-container {
+    color: white;
+    display: flex;
+    max-width: 60%;
+    margin:auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+        
+}
+
+.about .about-container .text {
+    margin-left: 40px;
+}
+
+.about .about-container h2 {
+    margin-top: 40px;
+}
+
+.about .about-container h2, .about .about-container p {
+    margin-bottom: 20px;
+}
+
+
