@@ -1,0 +1,97 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;   
+    background-color: black;    
+}
+
+.background-container {
+    max-width: 1000px;
+    margin: auto;
+   
+}
+
+header div {
+    background-color: #48C5CE;
+    text-align: center;
+    font-size: 19px;
+    color: white;
+    padding: 10px;
+    
+}
+
+.form {
+    background-color: white;
+    max-width: 230px;
+    background-color: #ffffffBB;
+    padding: 20px;
+    float: right;
+}
+
+.form h2 {
+    font-size: 16px;
+}
+
+.margin-bottom {
+    padding: 15px;
+}
+
+/*Ao invés do float: right + overflow: hidden para a imagem de fundo, poderíamos ter
+usado o display: flex + justify-content: flex-end;*/
+.subscribe {
+    padding: 20px;
+    background-image: url('../images/people.jpg');
+    background-size: cover;
+    overflow: hidden;
+}
+
+/*
+Passando o overflow:hidden, não era para a imagem ter ficado totalmente escondida de vez?
+O que acontece é que na verdade não temos uma imagem e sim um fundo, o fundo só aparece de
+acordo com o tamanho do nosso elemento. Ao passarmos float o form "sai" do nosso elemento pai,
+seria como se ele flutuasse fora do elemento, por isso não aparece imagem alguma atrás. Porém ao
+usar um overflow diferente do padrão ele busca todos os elementos e o float passa a existir novamente
+dentro do pai, logo o elemento pai (a section) passa a ter uma altura igual ao form mais o padding, por
+isso a imagem é englobada.
+*/
+
+.form form input, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/*Esses estilos serão aplicados somente aos inputs que tem submit*/
+
+.form form input[type="submit"] {
+    color: white;
+    background-color: #48C5CE;
+    font-size: bold;
+}
+
+/*PADRONIZAR SETA DO SELECT PARA EM TODOS OS NAVEGADORES*/
+
+.subscribe .form select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url(../images/arrow.jpg);
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+}
+
+/*Para posicionar a seta no select, usamos a função calc no background-position-x
+.Queremos que ela fique 100%, ou seja, totalmente no lado direito - 10px--- vai se deslocar
+um pouquinho para a esquerda. Dessa forma, estará posicionada no lugar exato que gostaríamos.
+ATENÇÃO: É IMPORTANTE DAR UM ESPAÇO ANTES E DEPOIS DO SINAL DE '-' NA FUNÇÃO CALC, SENÃO
+NÃO FUNCIONA.*/
+
+/*As duas propriedades de background-position poderiam ser substituídas por uma só, dessa forma:
+background-position: calc(100% - 10px) center;
+sendo o primeiro valor do eixo x e o segundo do eixo y.*/
